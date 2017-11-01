@@ -1,0 +1,6 @@
+1) docker daemon -g /home/dockeruser/mydocker - moving docker to different partition (the Docker daemon should be restarted). This is temp solution because after system startup the default location
+                                                will be using. In order to make it permanent we should configure startup command on the host OS (via systmctl for example)
+2) Debug docker with socat
+   sudo socat -v UNIX-LISTEN:/tmp/dockerapi.sock UNIX-CONNECT:/var/run/docker.sock &
+
+3) Port mapping -  docker run -d -p 10001:80 --name blog1 tutum/wordpress
